@@ -1,0 +1,52 @@
+﻿@model List<Instructor>
+
+
+
+@{
+    ViewData["Title"] = "Instructor Details";
+}
+<style>
+    .title-of-page {
+
+        text-align:center ; 
+        color:aqua ; 
+        
+    }
+    img { 
+        width : 80px ; 
+        hight :80px ; 
+    }
+
+
+
+
+</style>
+<h1 class="title-of-page">Instructor Details</h1>
+<table class="table table-bordered table-hover">
+       <thead>
+           <tr>
+                <td>instructor id</td>
+
+                <td>instructor name</td>
+
+                <td>instructor Image</td>
+
+                <td>instructor department</td>
+                
+                <td>instructor Course</td>
+           </tr>
+       </thead>
+
+    @foreach (var @item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td><img src="~/Images/@item.ImageUrl" alt="Alternate Text" /></td>
+            <td>@item.Department.Name</td>
+            <td>@item.Course.Name</td>
+            <td><a href="~/Instructor/Details?id=@item.Id" target="_blank">Instructor Details</a></td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,70 @@
+﻿@model Instructor 
+
+@{
+    ViewData["Title"] = "DetailsById";
+}
+<style>
+
+    .head-of-page { 
+        text-align : center ; 
+        color : red ; 
+    }
+
+    img {
+        width: 80px;
+        hight: 80px;
+    }
+</style>
+
+<h1 class="head-of-page">Details of instructor</h1>
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+
+        <tr>
+
+            <td> Id </td>
+
+            <td> Name </td>
+
+            <td> Salary  </td>
+            
+            <td> Image </td>
+
+            <td> Department </td>
+
+            <td> Course </td>
+
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+            <td>@Model.Id</td>
+
+            <td>@Model.Name</td>
+
+            <td> @Model.Salary</td>
+
+            <td> <img src="~/Images/@Model.ImageUrl" alt="Alternate Text" /></td>
+
+            <td>@Model.Department.Name</td>
+            
+            <td> @Model.Course.Name</td>
+
+            <td><a href="~/Instructor/Index">Go to all instructors</a></td>
+        </tr>
+
+
+
+    </tbody>
+
+
+</table>
+
+
